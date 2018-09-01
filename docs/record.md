@@ -137,7 +137,6 @@ After reading the constraints in the previous sections, and if you're coming fro
 2. Record, since its fields are fixed, is compiled to an array with array index accesses instead of JS object (try it in the playground!). On native, it compiles to basically a region of memory where a field access is just one field lookup + one actual access, aka **2 assembly instructions**. The good old days where folks measured in nanoseconds...
 3. Finally, since a record type is resolved through finding that single explicit type declaration (we call this "nominal typing"), the type error messages end up better than the counterpart ("structural typing", like for tuples). This makes refactoring easier; changing a record type's fields naturally allows the compiler to know that it's still the same record, just misused in some places. Otherwise, under structural typing, it might get hard to tell whether the definition site or the usage site is wrong.
 
-\* And we're not just finding excuses for ourselves! Reason objects do support these features.
 
 <!--TODO: sharable playground for 2 -->
 
